@@ -1,2 +1,2 @@
 # ClubRugby
-Projet de gestion d'un club de rugby pour UE Programmation Fonctionnelle
+Projet de gestion d'un club de rugby pour UE Programmation Orientée Objet
