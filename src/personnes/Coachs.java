@@ -1,31 +1,30 @@
 package personnes;
 
-import personnes.Joueur;
-
 public class Coachs extends Humain {
 	
-	private Joueur [] participant;
-	private int nbJoueurPresent = 0 ;
+	private String [] participant;
+	private int nbJoueurPresent = 0;
 	
 	public Coachs(String nom, int age, String fonction) {
 		super(nom, age, fonction);
+		this.participant = participant;
 	}
 	
 	public void demandePresenceEntrainement(Joueur joueur) {
-		if(joueur.presence(true)) {
-			participant[nbJoueurPresent] = joueur;
-			nbJoueurPresent += 1;
-		}
+			if(joueur.presence()) {
+				participant [nbJoueurPresent] = joueur.getNom();
+				nbJoueurPresent += 1;
+				System.out.println("Il y a " + participant[0] + ".");
+			}
 	}
-		
-	public void nombreJoueurEntrainement() {
-		for (int i = 0; i < participant.length; i++) {
-			demandePresenceEntrainement(null);
-		}
-		if (participant.length < 15){
+	
+	public void prepareEntrainement () {
+		if (participant.length < 2) {
 			System.out.println("Entrainement annulé");
-		} else {
+		}else {
 			System.out.println("Entrainement maintenu");
 		}
 	}
+	
+		
 }

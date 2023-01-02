@@ -5,19 +5,12 @@ import equipement.Equipement;
 public class DirigeantsClub extends Humain{ 
 	
 	private int nbJoueurClub;
-	private int argentClub = 80000;
+	private int argentClub;
 	
-	public DirigeantsClub(String nom, int age, String fonction, int nbJoueurClub) {
+	public DirigeantsClub(String nom, int age, String fonction, int nbJoueurClub, int argentClub) {
 		super(nom, age, fonction);
 		this.nbJoueurClub = nbJoueurClub;
 		this.argentClub = argentClub;
-	}
-	
-	public void gestionEquipement(Equipement equipement) {
-		if (equipement.getNbBallon() < 5  || equipement.getNbSacPlaquage() < 3
-		 || equipement.getNbGourde() < 20 || equipement.getNbStrap() < 25) {
-			
-		}
 	}
 	
 	public void acheterBallon(int stockBallon) {
@@ -82,5 +75,8 @@ public class DirigeantsClub extends Humain{
 		}	
 	}
 	
+	public void gestionArgentClub() {
+		System.out.println("Argent du club : " + argentClub);
+	}
 }
 
