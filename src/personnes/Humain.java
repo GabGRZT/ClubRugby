@@ -28,7 +28,7 @@ public class Humain {
 							+ nom
 							+ ", j'ai "
 							+ age
-							+ " et je suis "
+							+ " ans et je suis "
 							+ fonction
 							+ " dans le club.");
 	}

@@ -1,23 +1,22 @@
 package personnes;
 
-public class Joueur extends Humain {
-	private String poste;
+public class Joueur extends Humain {	
 	
 	public Joueur(String nom, int age, String fonction) {
 		super(nom, age, fonction);
-		this.poste = poste;
 	}
 	
-	public void presenceEntrainement(boolean presence) {
-		if (presence) {
-			System.out.println("Je serais là pour l'entrainement");	
-		} else {
-			System.out.println("Je ne serais pas là pour l'entrainement");
+	public void presence(String presence)		 {
+		if (presence == "OUI") {
+			System.out.println("Je serais là.");	
+		} else if (presence == "NON BLESSE"){
+			System.out.println("Je ne serais pas là car je suis blesse/malade.");
+		}else {
+			System.out.println("Je ne serais pas là.");
 		}
-	
 	}
-	
-	public void presenceMatc() {
 		
-	}
+	
 }
+	
+	
