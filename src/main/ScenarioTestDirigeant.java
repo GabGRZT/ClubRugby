@@ -16,7 +16,7 @@ public class ScenarioTestDirigeant {
 		secretaire.acheterSacPlaquage(5);
 		secretaire.acheterGourde(4);
 		secretaire.acheterStrap(4);
-		recruteur.gestionArgentClub();
+		
 	}
 
 }

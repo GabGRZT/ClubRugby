@@ -82,8 +82,5 @@ public class DirigeantsClub extends Humain{
 		}	
 	}
 	
-	public void gestionArgentClub() {
-		System.out.println(argentClub);
-	}
 }
 
