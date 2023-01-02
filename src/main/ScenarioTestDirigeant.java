@@ -7,10 +7,16 @@ import personnes.Coachs;
 public class ScenarioTestDirigeant {
 
 	public static void main(String[] args) {
-		DirigeantsClub dirigeant = new DirigeantsClub ("Christian", 45, "recruteur", 15);
-		dirigeant.sePresenter();
-		dirigeant.recrutementJoueur(2);
-
+		DirigeantsClub recruteur = new DirigeantsClub ("Fabien", 35, "recruteur", 15);
+		recruteur.sePresenter();
+		recruteur.recrutementJoueur(2);
+		DirigeantsClub secretaire = new DirigeantsClub ("Christian", 45, "secretaire", 17);
+		secretaire.sePresenter();
+		secretaire.acheterBallon(5);
+		secretaire.acheterSacPlaquage(5);
+		secretaire.acheterGourde(4);
+		secretaire.acheterStrap(4);
+		recruteur.gestionArgentClub();
 	}
 
 }

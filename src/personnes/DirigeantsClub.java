@@ -1,60 +1,74 @@
 package personnes;
 
-public class DirigeantsClub extends Humain{
+import equipement.Equipement;
+
+public class DirigeantsClub extends Humain{ 
 	
 	private int nbJoueurClub;
-	private int argentClub;
+	private int argentClub = 80000;
+	
 	public DirigeantsClub(String nom, int age, String fonction, int nbJoueurClub) {
 		super(nom, age, fonction);
 		this.nbJoueurClub = nbJoueurClub;
 		this.argentClub = argentClub;
 	}
 	
-	public void gestionEquipement() {
-		
+	public void gestionEquipement(Equipement equipement) {
+		if (equipement.getNbBallon() < 5  || equipement.getNbSacPlaquage() < 3
+		 || equipement.getNbGourde() < 20 || equipement.getNbStrap() < 25) {
+			
+		}
 	}
 	
-	public void acheterBallon(int ballon) {
-		if (ballon < 5) {
+	public void acheterBallon(int stockBallon) {
+		if (stockBallon < 5) {
 			System.out.println("Nous devons acheté de nouveaux ballons");
-			ballon += 10;
-			argentClub -= 100;
-			System.out.println("C'est bon, nous les recevrons la semaine prochaine");
+			for (int i = 0; i < stockBallon; i++) {
+				stockBallon += 1;
+				argentClub -= 70;
+			}
+			System.out.println("C'est bon, nous avons " + stockBallon +" ballons.");
 		}else {
-			System.out.println("Nous avons " + ballon + " ballons. C'est suffisant.");
+			System.out.println("Nous avons " + stockBallon + " ballons. C'est suffisant.");
 		}
 	}
 	
-	public void acheterSacPlaquage( int sacPlaquage) {
-		if (sacPlaquage < 3) {
-			System.out.println("Nous devons acheté de nouveaux sec de plaquages");
-			sacPlaquage += 5;
-			argentClub -= 100;
-			System.out.println("C'est bon, nous les recevrons la semaine prochaine");
+	public void acheterSacPlaquage( int StockSacPlaquage) {
+		if (StockSacPlaquage < 3) {
+			System.out.println("Nous devons acheté de nouveaux sac de plaquages");
+			for (int i = 0; i < StockSacPlaquage; i++) {
+				StockSacPlaquage += 1;
+				argentClub -= 50;
+			}
+			System.out.println("C'est bon, nous avons " + StockSacPlaquage +"sac de plaquages.");
 		}else {
-			System.out.println("Nous avons " + sacPlaquage + " sac de plaquage. C'est suffisant.");
+			System.out.println("Nous avons " + StockSacPlaquage + " sac de plaquage. C'est suffisant.");
 		}
 	}
 	
-	public void acheterGourde(int gourde) {
-		if (gourde < 20) {
+	public void acheterGourde(int stockGourde) {
+		if (stockGourde < 20) {
 			System.out.println("Nous devons acheté de nouvelles gourdes");
-			gourde += 5;
-			argentClub -= 70;
-			System.out.println("C'est bon, nous les recevrons la semaine prochaine et ");
+			for (int i = stockGourde; i < 20; i++) {
+				stockGourde += 1;
+				argentClub -= 5;
+			}
+			System.out.println("C'est bon, nous avons " + stockGourde +" gourdes. ");
 		}else {
-			System.out.println("Nous avons " + gourde + " gourdes. C'est suffisant.");
+			System.out.println("Nous avons " + stockGourde + " gourdes. C'est suffisant.");
 		}
 	}
 	
-	public void acheterStrap(int strap) {
-		if (strap < 25) {
-			System.out.println("Nous devons acheté de nouvelles gourdes");
-			strap += 35;
-			argentClub -= 50;
-			System.out.println("C'est bon, nous les recevrons la semaine prochaine");
+	public void acheterStrap(int stockStrap) {
+		if (stockStrap < 25) {
+			System.out.println("Nous devons acheté de nouvelles bandes de strap.");
+			for (int i = stockStrap; i < 25; i++) {
+				stockStrap += 1;
+				argentClub -= 5;
+			}
+			System.out.println("C'est bon, nous avons " + stockStrap +" bandes de strap.");
 		}else {
-			System.out.println("Nous avons " + strap + " bandes de strap. C'est suffisant.");
+			System.out.println("Nous avons " + stockStrap + " bandes de strap. C'est suffisant.");
 		}
 	}
 	
@@ -65,15 +79,11 @@ public class DirigeantsClub extends Humain{
 			System.out.println("Nous avons recrute " + nbJoueurRecrute + " joueurs. Il y a maintenant " + nbJoueurClub +" joueurs.");
 		}else {
 			System.out.println("Il y a beaucoup de joueur dans l'equipe, nous verrons le recrutement plus tard.");
-		}
-		
+		}	
 	}
 	
 	public void gestionArgentClub() {
-		
+		System.out.println(argentClub);
 	}
-	
-	
-	
-
 }
+
